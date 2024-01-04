@@ -13,6 +13,34 @@ body {
   position: relative;
 }
 
+.col:nth-child(even) > .movie:hover {
+  transform: rotate(-0.5deg) scale(1.025);
+}
+.col:nth-child(odd) > .movie:hover {
+  transform: rotate(0.5deg) scale(1.025);
+}
+
+.movie-voted {
+  background-color: var(--bs-success);
+  border-color: var(--bs-success);
+  color: var(--bs-light);
+}
+
+.col:nth-child(even) > .movie.movie-voted {
+  transform: rotate(1deg) scale(1.05);
+}
+.col:nth-child(odd) > .movie.movie-voted {
+  transform: rotate(-1deg) scale(1.05);
+}
+
+.movie > * {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.movie-voted > * {
+  opacity: 0.4;
+}
+
 .movie-underage {
   opacity: 0.15;
   pointer-events: none;
@@ -26,16 +54,4 @@ body {
 
 .movie-poster {
   aspect-ratio: 27 / 40;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.movie-voted {
-  background-color: var(--bs-success);
-  border-color: var(--bs-success);
-  color: var(--bs-light);
-  transform: rotate(1deg) scale(1.05);
-}
-
-.movie-voted > .movie-poster {
-  opacity: 0.4;
 }
