@@ -77,17 +77,17 @@ const updateVoteCount = () => {
 }
 
 const onPosterClick = function () {
-  const key = this.dataset.index
-  const adding = !votes.has(key)
+  const { id } = this.dataset
+  const adding = !votes.has(id)
 
   if (adding && votes.size >= MAX_VOTES) return
 
   this.classList.toggle('movie-voted', adding)
 
   if (adding) {
-    votes.add(key)
+    votes.add(id)
   } else {
-    votes.delete(key)
+    votes.delete(id)
   }
 
   updateVoteCount()
@@ -99,7 +99,7 @@ updateVoteCount()
 getMovies().then((movies) => {
   const movieList = document.querySelector('#movieList')
 
-  movies.forEach((movie, index) => {
+  movies.forEach((movie) => {
     const image = document.createElement('img')
     image.className = 'card-img-top movie-poster'
     image.draggable = false
@@ -119,7 +119,7 @@ getMovies().then((movies) => {
     card.className = 'card movie'
     card.title = movie.name
     card.onclick = onPosterClick
-    card.dataset.index = index
+    card.dataset.id = movie.id
     card.dataset.rating = movie.rating
 
     new bootstrap.Tooltip(card)

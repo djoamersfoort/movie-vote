@@ -8,10 +8,14 @@ export const getNames = async () => {
 export const getMovies = async () => {
   const request = await fetch('movies.json')
   const movies = await request.json()
-  // sort alphabetically
-  return movies.sort((a, b) => {
-    return a.name.toLowerCase().localeCompare(b.name.toLowerCase())
-  })
+
+  return movies
+    .map((movie, id) => {
+      return { ...movie, id }
+    })
+    .sort((a, b) => {
+      return a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+    })
 }
 
 export const getVotes = async () => {
