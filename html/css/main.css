@@ -1,0 +1,41 @@
+body {
+  overflow-x: hidden;
+}
+
+.modal-backdrop {
+  --bs-backdrop-opacity: 0.85 !important;
+}
+
+.movie {
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+
+  position: relative;
+}
+
+.movie-underage {
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.movie-rating {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.movie-poster {
+  aspect-ratio: 27 / 40;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.movie-voted {
+  background-color: var(--bs-success);
+  border-color: var(--bs-success);
+  color: var(--bs-light);
+  transform: rotate(1deg) scale(1.05);
+}
+
+.movie-voted > .movie-poster {
+  opacity: 0.4;
+}

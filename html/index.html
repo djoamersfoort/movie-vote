@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DJO Filmavond</title>
+
+    <link rel="stylesheet" href="css/djo.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <!-- name modal -->
+    <div class="modal fade" id="nameModal" tabindex="-1">
+      <form class="modal-dialog" id="nameForm">
+        <div class="modal-content">
+          <div class="modal-body">
+            <label class="form-label" for="nameSelect">Gebruikersnaam</label>
+            <select id="nameSelect" class="form-select mb-2" required>
+              <option style="display: none" value>Kies een naam...</option>
+            </select>
+
+            <label class="form-label" for="ageInput">Leeftijd</label>
+            <input
+              id="ageInput"
+              class="form-control"
+              type="number"
+              step="1"
+              inputmode="numeric"
+              pattern="[0-9]+"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Doorgaan</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- status modals -->
+    <div class="modal fade" id="errorModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Er is iets misgegaan...</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="errorMessage"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Sluiten</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content text-bg-success">
+          <div class="modal-body text-center lead fw-bold">Je hebt succesvol gestemd!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- movie list -->
+    <div class="p-4">
+      <div class="text-center p-4 mb-4 bg-primary rounded">
+        <h1 class="text-light fw-bold">Hey <span id="userName">daar</span>!</h1>
+        <h6 class="text-light">Klik op films om te stemmen.</h6>
+      </div>
+      <div
+        class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-5 g-4"
+        id="movieList"
+      ></div>
+    </div>
+
+    <!-- bottom bar -->
+    <div class="p-2 text-bg-primary d-flex justify-content-between sticky-bottom">
+      <div class="d-flex align-items-center gap-2">
+        <span>Je hebt</span>
+        <span class="badge text-bg-light rounded-pill" id="voteCount"></span>
+        <span>films gekozen.</span>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-success rounded-pill" id="voteButton">Stemmen</button>
+      </div>
+    </div>
+  </body>
+</html>
