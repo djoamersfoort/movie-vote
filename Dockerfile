@@ -1,12 +1,13 @@
-FROM node:current-alpine
+FROM node:20
 WORKDIR /app
 
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 
-RUN npm install
+RUN npm ci
 
-COPY . .
+COPY index.js index.js
+COPY html html
 
 EXPOSE 8080
 
