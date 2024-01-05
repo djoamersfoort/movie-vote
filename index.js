@@ -6,7 +6,7 @@ import MOVIES from './html/movies.json' assert { type: 'json' }
 import USERS from './html/users.json' assert { type: 'json' }
 
 const defaultData = { votes: {} }
-const db = await JSONFilePreset('votes.json', defaultData)
+const db = await JSONFilePreset('./data/votes.json', defaultData)
 
 const app = express()
 app.use(express.json())
