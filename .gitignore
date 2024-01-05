@@ -134,4 +134,4 @@ html/movies.json
 html/users.json
 
 # storage
-votes.json
+data/

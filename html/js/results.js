@@ -27,6 +27,7 @@ getVotes().then((movies) => {
     card.className = 'card movie'
     card.title = movie.name
 
+    new bootstrap.Tooltip(card)
     card.append(image, cardBody)
 
     if (movie.rating) {

@@ -29,7 +29,7 @@ app.post('/vote', async (req, res) => {
     return
   }
 
-  if (movies.some((index) => index < 0 || index > MOVIES.length)) {
+  if (movies.some((other) => !MOVIES.some((movie) => movie.name === other))) {
     res.status(400).send('Je kan niet op onbekende films stemmen.')
     return
   }
@@ -45,16 +45,17 @@ app.get('/votes', (req, res) => {
   const counts = {}
 
   for (const movies of Object.values(db.data.votes)) {
-    for (const key of movies) {
-      counts[key] = (counts[key] ?? 0) + 1
+    for (const name of movies) {
+      counts[name] = (counts[name] ?? 0) + 1
     }
   }
 
   const entries = Object.entries(counts).sort((a, b) => b[1] - a[1])
   const results = []
 
-  for (const [key, votes] of entries) {
-    results.push({ ...MOVIES[key], votes })
+  for (const [name, votes] of entries) {
+    const movie = MOVIES.find((movie) => movie.name === name)
+    if (movie) results.push({ ...movie, votes })
   }
 
   res.json(results)
