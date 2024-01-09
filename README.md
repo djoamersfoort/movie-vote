@@ -55,4 +55,4 @@ In `html/users.json` definieer je welke gebruikers kunnen stemmen. Deze heeft he
 ]
 ```
 
-> Let erop dat deze twee bestanden in `.gitignore` staan en dat je ze dus zelf moet creëren als je deze repository clonet! 
+> Let erop dat deze twee bestanden in [`.gitignore`](/.gitignore#L133) staan en dat je ze dus zelf moet creëren als je deze repository clonet! 
