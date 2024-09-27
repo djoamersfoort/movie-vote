@@ -1,10 +1,10 @@
 # DJO Movie Vote
 
-Een webapp voor het stemmen op films voor de DJO filmavond.
+Een webapp voor het stemmen op films voor de DJO Filmavond.
 
 ## Resultaten
 
-Iedereen kan de resultaten bekijken door naar `/results.html` te gaan.
+Iedereen kan de resultaten bekijken door naar [`html/results.html`](html/results.html) te gaan.
 
 ## Scripts
 
@@ -30,9 +30,9 @@ npm run dev # runs on :8080
 
 ### Films
 
-In `html/movies.json` definiëer je op welke films je kan stemmen. Deze hebben het volgende formaat:
+In `html/movies.json` definieer je op welke films je kan stemmen. Deze heeft het volgende formaat:
 
-```json
+```jsonc
 [
   {
     "name": "...",
@@ -45,12 +45,14 @@ In `html/movies.json` definiëer je op welke films je kan stemmen. Deze hebben h
 
 ### Gebruikers
 
-In `html/users.json` definiëer je welke gebruikers kunnen stemmen. Deze heeft het volgende formaat:
+In `html/users.json` definieer je welke gebruikers kunnen stemmen. Deze heeft het volgende formaat:
 
-```json
+```jsonc
 [
   "naam 1",
   "naam 2",
   ...
 ]
 ```
+
+> Let erop dat deze twee bestanden in [`.gitignore`](/.gitignore#L133) staan en dat je ze dus zelf moet creëren als je deze repository clonet! 
