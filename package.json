@@ -5,7 +5,7 @@
     "dev": "nodemon ."
   },
   "dependencies": {
-    "express": "^5.1.0",
+    "express": "^5.2.0",
     "lowdb": "^7.0.1"
   },
   "devDependencies": {
