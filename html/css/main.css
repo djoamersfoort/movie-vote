@@ -1,9 +1,21 @@
 body {
   overflow-x: hidden;
+  background-color: var(--bs-dark);
 }
 
 .modal-backdrop {
   --bs-backdrop-opacity: 0.85 !important;
+}
+
+.modal-warning {
+  background-color: var(--bs-red);
+  width: calc(100% - var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 2);
+  margin: auto;
+  border-radius: var(--bs-border-radius);
+}
+.modal-warning p {
+  width: calc(100% - var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 1.5);
+  margin: 10px auto;
 }
 
 .movie {
