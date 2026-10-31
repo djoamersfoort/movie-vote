@@ -2,8 +2,8 @@ import express from 'express'
 import { JSONFilePreset } from 'lowdb/node'
 
 import { MAX_VOTES } from './html/js/config.js'
-import MOVIES from './html/movies.json'
-import USERS from './html/users.json'
+import MOVIES from './html/movies.json' with { type: 'json' }
+import USERS from './html/users.json' with { type: 'json' }
 
 const defaultData = { votes: {} }
 const db = await JSONFilePreset('./data/votes.json', defaultData)

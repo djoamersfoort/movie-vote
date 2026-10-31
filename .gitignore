@@ -135,3 +135,5 @@ html/users.json
 
 # storage
 data/
+
+.idea/
